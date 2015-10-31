@@ -1,0 +1,279 @@
+// Common styles of the project
+*, :before, :after {
+    box-sizing: border-box;
+}
+/*--------Начальная установка параметров-------*/
+html, body, ul, ol, form, p, h1, h2, h3, fieldset {margin:0; padding:0}
+img {border:none; outline:none}
+a {outline:none}
+/*p, h1, h2, h3, fieldset, hr, ul {margin:0 10px 10px 10px}*/
+ul {list-style:none}
+hr {height:1px;	border:none; background-color:#FFF; clear:both}
+/*-----Начальная установка параметров-конец----*/
+
+
+/*-------Установка цвета и фона-------*/
+html, body {height: 100%; background-color:#eddc8b; background-image:url('%=staticPrefixForCss=%general/design/bg4.png');}
+/*----Установка цвета и фона-конец----*/
+
+
+/*-------Установка шрифта-------*/
+html {font-family:Georgia, Constantia, "Lucida Bright", "DejaVu Serif", serif; font-size: 62.5%}
+body {font-size: 1.4rem} /* 1rem = 10px */
+p    {font-size: 1.6rem; line-height:1.4em}
+/*----Установка шрифта-конец----*/
+
+
+/*---------Начальная установка ссылок----------*/
+:link                         {color:#808285; text-decoration: underline}
+:visited                      {color:#808285; text-decoration: underline}
+:link:hover, :visited:hover   {color:#005b8d; text-decoration: none}
+:link:active, :visited:active {color:#763f00; text-decoration: none}
+/*-------Начальная установка ссылок-конец------*/
+
+
+/*--------Базовая разметка сайта-------*/
+/* Вынес вниз */
+/*---Базовая разметка сайта - конец---*/
+
+
+/*---------Переменные----------*/
+$header-font:       'Cuprum', sans-serif; /* Для заголовков */
+$second-font:       Helvetica, Arial, sans-serif; /* Вспомогательный */
+$block-color-green: #bbca84; /* Базовый цвет блока - зеленый */
+$block-color:       #f4edc4; /* Базовый цвет блока - бежевый */
+/*-------Переменные-конец------*/
+
+/*--------Общие стили для блоков-------*/
+/* Стандартный блок */
+.block-style {
+  padding:24px 30px;
+  background-color:$block-color;
+  border-radius:3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+/* Стандартный заголовок блока */
+.block-header-style {
+  font-size: 200%;
+  margin-bottom: 14px;
+  line-height: 1.3em;
+  color: #333;
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+      color: #555;
+    }
+  }
+}
+
+/*---Общие стили для блоков - конец---*/
+
+/*--------Миксины---------*/
+@mixin block-style() {
+  padding:30px;
+  background-color:$block-color;
+  border-radius:3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+@mixin imgCont-left-1-3() {
+  width: 34%; height: auto;
+  float: left;
+  padding:3px 10px 0 0;
+}
+.brclear {clear: left}
+
+/* Размеры обычной кнопки */
+@mixin button-mid () {
+  width: $button-mid-width;
+  height: $button-mid-height;
+}
+@mixin img-max-size ($max-width, $max-height) {
+  max-width: $max-width;
+  max-height: $max-height;
+  width: auto;
+  height: auto;
+}
+/*-------Миксины-конец------*/
+
+
+
+//
+// Grid system
+// --------------------------------------------------
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+    @include container-fixed;
+
+    @media (max-width: $screen-sm-min - 1) {
+        width: $container-xs;
+    }
+    @media (min-width: $screen-sm-min) {
+        width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+        width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+        width: $container-lg;
+    }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+    @include container-fixed;
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+    @include make-row;
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@include make-grid-columns;
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+@include make-grid(xs);
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: $screen-sm-min) {
+    @include make-grid(sm);
+}
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: $screen-md-min) {
+    @include make-grid(md);
+}
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-lg-min) {
+    @include make-grid(lg);
+}
+
+/* Вынесенно сюда, что бы при extend не затерало переопределенные значения*/
+
+/*--------Базовая разметка сайта-------*/
+
+$footer-height:  50px; //высота футера
+
+.page {
+  &__header {
+    padding-bottom: 10px
+  }
+  &__wrapper {
+    min-height: 100%;
+    max-width:1440px;
+    margin: 0 auto;
+    margin-bottom: -$footer-height;
+    padding: 0 5px;
+  }
+  &__buffer {
+    height: $footer-height;
+  }
+  &__footer {
+    height: $footer-height;
+  }
+}
+* html .page__wrapper {height: 100%;}
+
+
+/*----Три колонки - стандарт----*/
+.content>* {min-height: 50px !important}
+.content {
+  @extend .row;
+  $border-true: 0px;
+  border: $border-true solid blue;
+  padding: 0;
+  margin: 0;
+  &__left-column {
+    border: $border-true solid orange; //убрать
+    @extend .col-lg-3;
+    padding: 0; /* Убираем отступы у колонок */
+  }
+  &__center-column {
+    border: $border-true solid blue; //убрать
+    @extend .col-lg-6;
+  }
+  &__right-column {
+    border: $border-true solid red; //убрать
+    @extend .col-lg-3;
+    padding: 0; /* Убираем отступы у колонок */
+  }
+}
+
+/*----Две колонки - mod="left-center-column"----*/
+/*----------Левая и центральная колонки---------*/
+.content_left-center-column {
+  .content {
+    &__right-column {
+      display: none;
+    }
+    &__center-column {
+      @extend .col-lg-9;
+      padding-right: 0;
+    }
+  }
+}
+
+/*----Две колонки - mod="right-center-column"----*/
+/*----------Правая и центральная колонки---------*/
+.content_right-center-column {
+  .content {
+    &__left-column {
+      display: none;
+    }
+    &__center-column {
+      @extend .col-lg-9;
+      padding-left: 0;
+    }
+  }
+}
+
+/*------Одна колонка - mod="center-column"------*/
+/*--------------Центральная колонка-------------*/
+.content_center-column {
+  .content {
+    &__left-column {
+      display: none;
+    }
+    &__right-column {
+      display: none;
+    }
+    &__center-column {
+      @extend .col-lg-12;
+      padding: 0;
+    }
+  }
+}
+
+/*---Базовая разметка сайта - конец---*/
+

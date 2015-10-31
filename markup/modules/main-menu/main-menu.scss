@@ -1,0 +1,87 @@
+/*----Главное меню----*/
+.main-menu {
+  $menu-elem-amount: 7;     //кол-во элементов меню
+  $menu-elem-margin: 1%;    //размер отступа между элементами меню
+  $menu-elem-width:  (100% - (($menu-elem-amount - 1) * $menu-elem-margin)) / $menu-elem-amount; //ширина одного элемента меню
+  $menu-elem-height: 120px; //высота одного элемента меню
+  &__list {
+    height: $menu-elem-height;
+    width: $menu-elem-width;
+//    width: 13.4%;
+    line-height: $menu-elem-height;
+//    margin-left: 1.03%;
+    margin-left: $menu-elem-margin;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 3.4rem;
+    font-family: $header-font;
+    background: #f4edc4 center top no-repeat;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    text-transform: capitalize;
+    white-space: pre;
+    &_active {
+      height: 130px;
+      border-radius: 3px 3px 0 0;
+/*      &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        height: 5px;
+        width: 100%;
+        background-color: $block-color-green;
+      }*/
+    }
+    &_longText {
+      font-size: 2.6rem
+    }
+    &_wushu {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/wushu.jpg')
+    }
+    &_go {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/go.jpg')
+    }
+    &_tea {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/tea.jpg')
+    }
+    &_publishing {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/publishing.jpg')
+    }
+    &_timetable {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/timetable.jpg')
+    }
+    &_doing {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/doing.jpg')
+    }
+    &_about {
+      background-image: url('%=staticPrefixForCss=%assets/main-menu/about.jpg')
+    }
+    &:first-child {
+      margin-left: 0
+    }
+  }
+  &__anch {
+    display: block;
+    height: $menu-elem-height;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    color: inherit;
+    text-transform: capitalize;
+    white-space: pre;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__list_active a {
+    height: 130px;
+  }
+}
+
+/*---Главное меню-конец---*/

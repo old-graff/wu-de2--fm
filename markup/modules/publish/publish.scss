@@ -1,0 +1,91 @@
+/*----------Публикации-------------*/
+.publish {
+  @extend .block-style;
+  margin-bottom: 20px;
+  &__header {
+    @extend .block-header-style;
+  }
+  &__img-cont {
+    float: left;
+    margin-right: 20px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  &__right {
+    float: right;
+    margin: 0;
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+  &__center {
+    float: none;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px
+  }
+  &__caption {
+    font-size: 1.2rem;
+    font-family: $second-font;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  &__footer {
+    color: #666;
+    font-family: $second-font;
+    hr {
+      margin: 20px 0 14px 0;
+      background-color: #999
+    }
+  }
+  &__social {
+    float: left;
+  }
+  &__more {
+    margin-top: 6px;
+    display: inline-block;
+  }
+  &__more, &__date, &__author {
+    font-weight: bold;
+    font-size: 1.2rem
+  }
+  &__date {
+    float: right;
+  }
+  &__author {
+    margin-bottom: 10px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+  &__clear {
+    clear: both
+  }
+  &__column-1, &__column-2, &__column-3 {
+    padding: 0;
+  }
+  &__column-1 {
+    @extend .col-lg-3;
+  }
+  &__column-2 {
+    @extend .col-lg-6;
+  }
+  &__column-3 {
+    @extend .col-lg-3;
+  }
+  &__tag-cont {
+    font-family: $second-font;
+    font-size: 1.1rem;
+    word-spacing: 4px;
+  }
+
+  &__tag-cont a {
+    text-decoration: none;
+    word-spacing: normal;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*--------Публикации-конец---------*/

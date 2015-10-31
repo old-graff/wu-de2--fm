@@ -1,0 +1,36 @@
+.social {
+  &__anch {
+    float: left;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    @extend %icon;
+    @extend %icon_block;
+  @include icon_size(21px);
+//    @extend %icon_size_xsmall;
+    &_vk {
+      @extend %icon_vk_grey;
+      &:hover {
+        @extend %icon_vk_color;
+      }
+    }
+    &_fb {
+      @extend %icon_fb_grey;
+      &:hover {
+        @extend %icon_fb_color;
+      }
+    }
+    &_ok {
+      @extend %icon_ok_grey;
+      &:hover {
+        @extend %icon_ok_color;
+      }
+    }
+    &_tw {
+      @extend %icon_tw_grey;
+      &:hover {
+        @extend %icon_tw_color;
+      }
+    }
+  }
+}
+

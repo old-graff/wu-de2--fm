@@ -1,0 +1,30 @@
+/*-----Шапка-----*/
+.header {
+  &__org-name-cont {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  &__org-name-cont {
+    background-color: #BBCA84;
+    height: 120px;
+    margin-bottom: 10px;
+    border-radius: 0 0 3px 3px;
+  }
+  &__org-name {
+    font-size: 4.8rem;
+    color: #FFF;
+    font-family: $header-font;
+    line-height: 120px;
+    padding: 0 3rem
+  }
+  &__title-phone {
+    float: right
+  }
+  &__main-menu {
+    height: 120px;
+  }
+  &__second-menu {
+    padding-top: 10px
+  }
+}
+
+/*---Шапка-конец---*/

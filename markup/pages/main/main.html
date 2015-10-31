@@ -1,0 +1,63 @@
+<!doctype html>
+<!--[if IE 7]>
+<html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="ru"><![endif]-->
+<!--[if IE 8]>
+<html class="ie8 lt-ie10 lt-ie9 no-js" lang="ru"><![endif]-->
+<!--[if IE 9 ]>
+<html class="ie9 lt-ie10 no-js" lang="ru"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="no-js" lang="ru"><!--<![endif]-->
+{{#with page_main}}
+<head>
+    {{> head/head head}}
+</head>
+
+<body block="page">
+
+<section elem="wrapper">
+
+    <div elem="header">
+        {{> header/header header}}
+    </div><!--page__header-->
+
+    <div elem="content">
+
+        <div block="content" mix="block:container">
+
+            <div elem="left-column">
+
+                {{> testblock/testblock}}
+
+            </div><!--content__left-column-->
+
+            <div elem="center-column">
+
+                {{> publish/publish}}
+
+                {{> person-card/person-card}}
+
+                {{> page-nav/page-nav}}
+
+            </div><!--content__center-column-->
+
+            <div elem="right-column">
+
+                {{> testblock/testblock}}
+
+            </div><!--content__right-column-->
+
+        </div><!--content-->
+
+    </div><!--page__content-->
+
+    <div class="page__buffer"></div>
+
+</section><!--page__wrapper-->
+
+<div elem="footer">
+    {{> footer/footer footer}}
+</div><!--page__footer-->
+
+</body>
+{{/with}}
+</html>

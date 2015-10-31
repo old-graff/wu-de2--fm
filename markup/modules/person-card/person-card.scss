@@ -1,0 +1,79 @@
+.person-card {
+  @extend .block-style;
+  margin-bottom: 20px;
+  &__header {
+    @extend .block-header-style;
+    margin-bottom: 0;
+    padding-right: 90px;
+  }
+  &__age {
+    float: right;
+    color: #CCC;
+    margin-right: -90px;
+  }
+  &__school {
+    margin-bottom: 18px
+  }
+  &__imgCont {
+    @include imgCont-left-1-3;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__more {
+    float: right;
+    margin-top: 8px;
+    font-family: $second-font;
+    font-weight: bold;
+    font-size: 1.2rem
+  }
+  &__footer {
+    color: #666;
+    border-top: 1px solid transparent;
+    clear: both;
+    font-family: $second-font;
+    hr {
+      margin: 20px 0 14px 0;
+      background-color: #999
+    }
+  }
+  &__contact-header {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  &__contact, &__schedule {
+    font-size: 1.2rem;
+    li {
+      margin: 4px 0;
+    }
+    a {
+      text-decoration: none
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  &__schedule {
+    caption {
+      font-size: 1.2rem;
+      text-align: left;
+      font-weight: bold;
+      margin: 2px 0;
+    }
+    td {
+      padding: 4px 8px
+    }
+    td:first-child {padding-left:0}
+  }
+  &__column-1, &__column-2, &__column-3 {
+    padding: 0;
+  }
+  &__column-1 {
+    @extend .col-lg-5;
+  }
+  &__column-2 {
+    @extend .col-lg-7;
+  }
+  &__clear {clear: both}
+} 

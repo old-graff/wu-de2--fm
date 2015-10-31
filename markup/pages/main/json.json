@@ -1,0 +1,75 @@
+{
+  "page_main": {
+    "head": {
+      "title": "Центр ушу и цигун «У Дэ»",
+      "useSocialMetaTags": true
+    },
+    "header": {
+      "title": "Центр ушу и цигун «У Дэ»",
+      "phone": "22-44-12",
+      "main-menu": {
+        "menu-list": [
+          {
+            "url": "#",
+            "text": "ушу",
+            "mod": "wushu, active"
+          },
+          {
+            "url": "#",
+            "text": "чай",
+            "mod": "tea"
+          },
+          {
+            "url": "#",
+            "text": "го",
+            "mod": "go"
+          },
+          {
+            "url": "#",
+            "text": "события",
+            "mod": "doing"
+          },
+          {
+            "url": "#",
+            "text": "публикации",
+            "mod": "publishing, longText"
+          },
+          {
+            "url": "#",
+            "text": "расписание",
+            "mod": "timetable, longText"
+          },
+          {
+            "url": "#",
+            "text": "о центре",
+            "mod": "about"
+          }
+        ]
+      },
+      "second-menu": {
+        "menu-list": [
+          {
+            "text": "Багуачжан",
+            "mod": "active"
+          },
+          {
+            "url": "#",
+            "text": "Тайцзицюань"
+          },
+          {
+            "url": "#",
+            "text": "Мэйхуачжуан"
+          },
+          {
+            "url": "#",
+            "text": "Детская игровая"
+          },
+          {
+            "url": "#",
+            "text": "ещё"
+          }
+        ]
+      }
+    }
+  }
+}
